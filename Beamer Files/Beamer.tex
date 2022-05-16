@@ -1,0 +1,93 @@
+\documentclass{beamer}
+\usetheme{CambridgeUS}
+
+\setbeamertemplate{caption}[numbered]{}
+
+\usepackage{enumitem}
+\usepackage{tfrupee}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{gensymb}
+\usepackage{graphicx}
+\usepackage{txfonts}
+
+\def\inputGnumericTable{}
+
+\usepackage[latin1]{inputenc}                                 
+\usepackage{color}                                            
+\usepackage{array}                                            
+\usepackage{longtable}                                        
+\usepackage{calc}                                             
+\usepackage{multirow}                                         
+\usepackage{hhline}                                           
+\usepackage{ifthen}
+\usepackage{caption} 
+\captionsetup[table]{skip=3pt}  
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\renewcommand{\thefigure}{\arabic{table}}
+\renewcommand{\thetable}{\arabic{table}}                                     
+                               
+\title{AI1110 \\ Assignment 7}
+\author{U.S.M.M TEJA \\ CS21BTECH11059}
+\date{17th May 2022}
+
+
+\begin{document}
+	% The title page
+	\begin{frame}
+		\titlepage
+	\end{frame}
+	
+	% The table of contents
+	\begin{frame}{Outline}
+    		\tableofcontents
+	\end{frame}
+	
+	% The question
+	\section{Question}
+	\begin{frame}{Exercise 13.2.3}
+	A box of oranges is inspected by examining three randomly selected oranges drawn without replacement. If all the three oranges are good, the box is approved for sale, otherwise, it is rejected. Find the probability that a box will be saled , which containing 15 oranges out of which 12 are good and 3 are bad ones will be approved for sale.
+	\end{frame}
+	
+	% The solution
+	\section{Solution}
+	\begin{frame}{Solution}
+	Let random variable $X_1, X_2, X_3 \in \cbrak{1,2}$ denote the following events in Table \eqref{fig-1}
+	\begin{table}[ht!]
+		\centering
+		\input{tables/table-1}
+		\caption{Description of events}
+		\label{table:table1}	
+	\end{table}
+
+		\end{frame}
+
+
+	\begin{frame}{Theory Related to this Question}
+Picking the objects with replacement and without replacement:
+	\end{frame}
+	
+		\begin{frame}{Input probabilities}
+	\begin{table}[ht!]
+		\centering
+		\input{tables/table-2}
+		\caption{Input probabilities}
+		\label{table:table2}	
+	\end{table}
+	\end{frame}
+
+	\section{Answer}
+	\begin{frame}{Answer}
+probability for getting all good oranges is :
+\begin{multline}
+\pr{X_1=1} \times \pr{X_2 = 1|X_1 = 1} \times
+\pr{X_3 = 1|X_1 = 1, X_2=1}
+\end{multline}
+\begin{align}
+    & = \frac{4}{5} \times \frac{11}{14} \times \frac{10}{13} & \\
+    & = 0.483 &
+\end{align}
+	\end{frame}
+	
+\end{document}
